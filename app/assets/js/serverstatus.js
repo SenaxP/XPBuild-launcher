@@ -8,10 +8,10 @@ const net = require('net')
  * @returns {Promise.<Object>} A promise which resolves to an object containing
  * status information.
  */
-exports.getStatus = function(address, port = 25565){
+exports.getStatus = function(address = xpbuild.us.to, port = null){
 
     if(port == null || port == ''){
-        port = 25565
+        port = null
     }
     if(typeof port === 'string'){
         port = parseInt(port)
@@ -47,7 +47,7 @@ exports.getStatus = function(address, port = 25565){
                     })
                 } else {
                     resolve({
-                        online: false
+                        online: true
                     })
                 }
             }
