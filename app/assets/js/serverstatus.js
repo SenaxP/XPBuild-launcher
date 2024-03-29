@@ -8,7 +8,7 @@ const net = require('net')
  * @returns {Promise.<Object>} A promise which resolves to an object containing
  * status information.
  */
-exports.getStatus = function(address = xpbuild.us.to, port = null){
+exports.getStatus = function(address = xpbuild.us.to, port){
 
     if(port == null || port == ''){
         port = null
